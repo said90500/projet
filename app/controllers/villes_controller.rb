@@ -11,6 +11,7 @@ class VillesController < ApplicationController
   # GET /villes/1.json
   def show
     @meteo = @ville.meteo
+    @temperature = @ville.meteo_temp
   end
 
   # GET /villes/new

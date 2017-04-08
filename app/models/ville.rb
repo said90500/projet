@@ -5,8 +5,16 @@ class Ville < ActiveRecord::Base
   def meteo
     forecast = ForecastIO.forecast(self.latitude, self.longitude) # params are: latitude, longitude
     if forecast
-    @meteo = forecast.currently # gives you the current forecast datapoint
+    forecast.currently # gives you the current forecast datapoint
     forecast.currently.summary # =>"Mostly Cloudy"
+    end  
+  end 
+  
+  def meteo_temp
+    forecast = ForecastIO.forecast(self.latitude, self.longitude) # params are: latitude, longitude
+    if forecast
+    #forecast.currently # gives you the current forecast datapoint
+    forecast.currently.temperature # =>"Mostly Cloudy"
     end  
   end 
   

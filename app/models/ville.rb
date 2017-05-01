@@ -14,7 +14,7 @@ class Ville < ActiveRecord::Base
     forecast = ForecastIO.forecast(self.latitude, self.longitude) # params are: latitude, longitude
     if forecast
     #forecast.currently # gives you the current forecast datapoint
-    forecast.currently.temperature # =>"Mostly Cloudy"
+    forecast.currently.temperature # =>"Farenheit"
     end  
   end 
   
